@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  alumno: MyString
+  imagen: MyString
+  comentario: MyText
+  evaluacion: 1
+  fecha: 2017-07-07
+  hora: 2017-07-07 09:06:15
+
+two:
+  alumno: MyString
+  imagen: MyString
+  comentario: MyText
+  evaluacion: 1
+  fecha: 2017-07-07
+  hora: 2017-07-07 09:06:15

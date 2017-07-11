@@ -1,0 +1,56 @@
+<%= form_with(model: turno, local: true) do |form| %>
+  <% if turno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(turno.errors.count, "error") %> prohibited this turno from being saved:</h2>
+
+      <ul>
+      <% turno.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :alumno , "Nombre"%>
+      <%= form.text_field :alumno, id: :turno_alumno, :placeholder => "Nombre" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :imagen, "Foto" %>
+      <%= form.text_field :imagen, id: :turno_imagen, :placeholder => "Url de la foto"  %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :comentario, "Comentario" %>
+      <%= form.text_area :comentario, id: :turno_comentario, :placeholder => "Comentario" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :evaluacion, "Evaluacion" %>
+      <%= form.number_field :evaluacion, id: :turno_evaluacion, :placeholder => "Evaluacion"  %>
+    </div>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :fecha, "Fecha" %>
+      <%= form.date_select :fecha, id: :turno_fecha, :placeholder => "Fecha" %>
+    </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :hora, "Hora" %>
+      <%= form.time_select :hora, id: :turno_hora, :placeholder => "Hora" %>
+    </div>
+
+  <div class="form-group">
+      <div class="actions">
+        <%= form.submit "Registrar", :class => "btn btn-primary"  %>
+      </div>
+  </div>
+<% end %>

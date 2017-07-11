@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Turnos</h1>
+
+<div class="grid" data-masonry= '{"itemSelector": ".grid-item", "columnWidth": 190 }'>
+  <% @turnos.each do |turno| %>
+  <div class="grid-item" style="width: 20%">
+    <div class="thumbnail">
+        <%= image_tag(turno.imagen, :class => 'img_responsive') %>
+        <%= turno.alumno %>
+        <%= turno.comentario %>
+        <%= turno.evaluacion %>
+        <%= turno.fecha %>
+        <%= turno.hora %>
+        <div class="buttons" style="margin-top: 10px; margin-bottom:10px">
+        <%= link_to 'Observar', turno, :class => 'btn'  %>
+        <%= link_to 'Editar', edit_turno_path(turno), :class => 'btn'  %>
+        <%= link_to 'Eliminar', turno, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn'  %>
+        </div>
+      </div>
+
+    </div>
+
+
+<% end %>
+
+
+
+</div>
+
+  <%= link_to 'Nuevo Turno', new_turno_path, :class => 'btn' %>
+
+<script type="text/javascript">
+ $('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
+
+$(window).load(function(){
+  $('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 200
+});
+  })
+</script>
